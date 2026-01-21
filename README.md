@@ -9,13 +9,33 @@ Caveat: Due to limited historical and marketing data, the analysis relies exclus
 - Develop and justify relevant KPIs using SQL
 - Provide insights through clear dashboards and analysis
 
-## Data Coverage
-- July 2020 – March 2022
+## Dataset Overview
+- Transaction-level retail data
+- Time period: July 2020 – March 2022
+- Birmingham store data available from October 2020
+- Tables used:
+        receipts
+        receipt_lines
+        products
 
-## Tools Used
-- SQL (analytics & transformations)
-- Tableau (visualizations)
-- Git (version control)
+## Data Cleaning & Preparation
+Issues Identified
+- Garbage receipt IDs with invalid transaction values (9999999)
+- Missing regional information
+- Inconsistent store-level segmentation
+Cleaning Actions
+- Removed invalid receipt records
+- Created regional mapping table
+- Standardized time dimensions (month, quarter, year)
+
+## Feature Engineering
+- Region classification from store codes
+- Quarterly and monthly time buckets
+- Customer lifecycle metrics:
+      New customers
+      Active customers
+      Loyal customers
+- Cohort assignment based on first purchase quarter
 
 ## Key KPIs
 - Annual revenue & transactions
@@ -26,6 +46,16 @@ Caveat: Due to limited historical and marketing data, the analysis relies exclus
 - Cohort retention
 - Top-performing departments
 
+## Tableau Dashboards
+
+The following dashboards were built:
+- Annual Revenue & Transactions
+- Top Performing Departments
+- Regional Sales Trends
+- Customer Acquisition & Loyalty
+- Quarterly Retention Heatmap
+Each KPI directly feeds into a business insight.
+
 ## Key Insights
 - London generates the highest revenue and transaction volume
 - Customer spend per transaction is highest in London
@@ -35,3 +65,7 @@ Caveat: Due to limited historical and marketing data, the analysis relies exclus
 
 ## Recommendation
 While London delivers the highest current performance, Birmingham presents the strongest opportunity for marketing investment due to higher retention and greater potential for customer growth.
+
+## Tools Used
+- SQL (analytics & transformations)
+- Tableau (visualizations)
